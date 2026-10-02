@@ -1,0 +1,325 @@
+/* =====================================================================
+   Actividad M3S6 - Landing Page Responsiva con Flexbox
+   ---------------------------------------------------------------------
+   REGLA PRINCIPAL: todo el layout se resuelve con FLEXBOX.
+   Está PROHIBIDO usar display:grid o cualquier propiedad de CSS Grid.
+
+   Este archivo ya trae el reset, los colores y la tipografía base.
+   Tu trabajo son los bloques marcados con TODO.
+   ===================================================================== */
+
+
+/* ---------- Reset y variables (ya resuelto) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #1a1a1a;
+    --color-suave: #5a5a5a;
+    --color-marca: #14532d;
+    --color-marca-claro: #f0f7f2;
+    --color-borde: #e2e2e2;
+    --radio: 8px;
+    --gap: 1rem;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background: var(--color-fondo);
+}
+
+/* Imágenes flexibles - base obligatoria (ya resuelto) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a { color: inherit; }
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
+/* ==================================================================
+   ESTILOS BASE = MÓVIL  (mobile-first, SIN media query)
+   ===================================================================== */
+
+/* ---------- HEADER + NAV ---------- */
+
+
+ .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+.logo span { color: var(--color-marca); }
+
+.menu-hamburguesa {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.icono-menu {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu-hamburguesa:checked ~ nav {
+    display: flex;
+}
+
+.nav__link {
+    display:flex;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--color-suave);
+}
+
+.nav__link:hover { color: var(--color-marca); }
+
+a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--color-marca);
+    outline-offset: 2px;
+}
+
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    min-height: 70dvh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    inset: 0;
+}
+
+.hero__content {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero__title {
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero__subtitle {
+    /* TODO 9: segundo uso de clamp() (mínimo 2 en toda la actividad) */
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-marca);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radio);
+    font-weight: 600;
+}
+
+
+/* ---------- SECCIONES GENERALES ---------- */
+.section-title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.cards,
+.info {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+
+/* ---------- TARJETAS ---------- */
+.cards__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.card {
+    flex: 0 0 100%;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+}
+
+.card__img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.card__body { padding: 1rem; }
+.card__title { margin-bottom: 0.5rem; }
+.card__text { color: var(--color-suave); margin-bottom: 0.75rem; }
+.card__link { color: var(--color-marca); font-weight: 600; }
+
+
+/* ---------- INFO (imagen + texto) ---------- */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--color-marca-claro);
+}
+
+.info__text p { margin-bottom: 1rem; }
+
+.info__img {
+    object-fit: cover;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+    background: var(--color-texto);
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.footer__cols {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__col h3 { margin-bottom: 0.5rem; }
+.footer__col a { color: #d4d4d4; text-decoration: none; padding: 0.25rem 0; }
+.footer__col a:hover { color: #fff; }
+
+.footer__copy {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    text-align: center;
+    color: #bdbdbd;
+    font-size: 0.875rem;
+}
+
+
+/* =====================================================================
+   TABLET  (min-width: 768px)
+   ===================================================================== */
+@media screen and (min-width: 768px) {
+
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-hamburguesa,
+    .icono-menu {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .card {
+        flex-basis: calc(50% - (var(--gap)/2) );
+    }
+
+    .info {
+        flex-direction: row;
+    }
+  
+    .info__text,
+    .info__media {
+        flex: 1 1 0;
+    }
+
+    .footer__cols {
+        flex-direction: row;
+    }
+}
+
+
+/* =====================================================================
+   DESKTOP  (min-width: 1024px)
+   ===================================================================== */
+@media screen and (min-width: 1024px) {
+
+    .site-header {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+   
+    .card {
+    flex-basis: calc(33.333% - (var(--gap) * 2 / 3));
+    }
+
+    .info__media{
+        flex-basis: 40%;
+    }
+    .info__text{
+        flex-basis: 60%;
+    }
+}
+
+
+/* =====================================================================
+   RETO OPCIONAL (+10 pts): menú hamburguesa CSS-only
+   Pista: <input type="checkbox" id="menu"> + <label for="menu">
+   y el selector #menu:checked ~ .nav { display: flex; }
+   A partir de 768px oculta el checkbox y el label.
+   ===================================================================== */

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas de Montaña</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#contenido" class="skip-link">
+        Saltar al contenido principal!
+    </a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+        <a class="logo" href="#">Rutas<span>MX</span></a>
+
+        <input type="checkbox" id="menu" class="menu-hamburguesa">
+
+        <label for="menu" class="icono-menu" aria-label="abrir menu">☰</label>
+
+        <nav class="nav" aria-label="Navegación">
+            <a class="nav__link" href="#rutas">Rutas</a>
+            <a class="nav__link" href="#info">Nosotros</a>
+            <a class="nav__link" href="#">Blog</a>
+            <a class="nav__link" href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <img class="hero__img"
+                 src="https://picsum.photos/id/1018/1600/900"
+                 alt="">
+            <div class="hero__content">
+                <h1 class="hero__title">Descubre la montaña</h1>
+                <p class="hero__subtitle">Rutas guiadas para todos los niveles.</p>
+                <a class="btn" href="#rutas">Ver rutas</a>
+            </div>
+        </section>
+
+        <!-- ============ TARJETAS ============ -->
+        <section class="cards" id="rutas">
+            <h2 class="section-title">Nuestras rutas</h2>
+
+            <div class="cards__list">
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1015/600/400" alt="Fiordo azul entre montañas rocosas visto desde un mirador en un acantilado con visitantes.">
+                    <div class="card__body">
+                        <h3 class="card__title">Cañón del Río</h3>
+                        <p class="card__text">Ruta de dificultad media junto al río, 8 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1016/600/400" alt="Cañón rocoso de tonos naranjas al atardecer, con matorrales verdes y un cielo nublado.">
+                    <div class="card__body">
+                        <h3 class="card__title">Pico Nevado</h3>
+                        <p class="card__text">Ascenso de alta montaña, 14 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1019/600/400" alt="Nubes oscuras de tormenta con claros de luz sobre un mar sombrío y una ola de espuma.">
+                    <div class="card__body">
+                        <h3 class="card__title">Bosque de Niebla</h3>
+                        <p class="card__text">Caminata familiar de baja dificultad, 4 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1021/600/400" alt="Ladera boscosa envuelta en niebla, en blanco y negro, con pinos que emergen entre la bruma.">
+                    <div class="card__body">
+                        <h3 class="card__title">Mirador del Valle</h3>
+                        <p class="card__text">Sendero corto con vista panorámica, 3 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1022/600/400" alt="Aurora boreal verde sobre un cielo estrellado, con la silueta de un abeto en primer plano.">
+                    <div class="card__body">
+                        <h3 class="card__title">Lago Escondido</h3>
+                        <p class="card__text">Ruta circular alrededor del lago, 10 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="https://picsum.photos/id/1024/600/400" alt="Buitre con las alas abiertas aterrizando sobre una roca, con fondo azul grisáceo desenfocado.">
+                    <div class="card__body">
+                        <h3 class="card__title">Cascada Azul</h3>
+                        <p class="card__text">Sendero húmedo hasta la cascada, 6 km.</p>
+                        <a class="card__link" href="#">Ver detalle</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============ INFO ============ -->
+        <section class="info" id="info">
+            <div class="info__media">
+
+                <picture>
+                    <source  
+                        media="(min-width: 1024px)" 
+                        srcset="https://picsum.photos/id/907/1200/800.jpg">
+
+                    <source 
+                        media="(min-width: 768px)" 
+                        srcset="https://picsum.photos/id/907/800/600.jpg">
+
+                    <img 
+                        class="info__img" 
+                        src="https://picsum.photos/id/907/800/600" 
+                        alt="Orilla de grava oscura con trozos de hielo junto a un mar calmo bajo un cielo azul nublado.">
+                </picture>
+
+            </div>
+            <div class="info__text">
+                <h2 class="section-title">Quiénes somos</h2>
+                <p>Somos un grupo de guías certificados con más de diez años recorriendo
+                   la sierra. Diseñamos cada ruta pensando en la seguridad y en el ritmo
+                   de cada grupo.</p>
+                <p>Todas nuestras salidas incluyen equipo básico, seguro y transporte
+                   desde el punto de reunión.</p>
+                <a class="btn" href="#">Conoce al equipo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="footer__cols">
+            <div class="footer__col">
+                <h3>Rutas</h3>
+                <a href="#">Principiante</a>
+                <a href="#">Intermedio</a>
+                <a href="#">Avanzado</a>
+            </div>
+            <div class="footer__col">
+                <h3>Empresa</h3>
+                <a href="#">Nosotros</a>
+                <a href="#">Guías</a>
+                <a href="#">Trabaja con nosotros</a>
+            </div>
+            <div class="footer__col">
+                <h3>Contacto</h3>
+                <a href="#">correo@rutasmx.com</a>
+                <a href="#">+52 81 0000 0000</a>
+                <a href="#">Monterrey, N.L.</a>
+            </div>
+        </div>
+        <p class="footer__copy">&copy; 2026 RutasMX. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
